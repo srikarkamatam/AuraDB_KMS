@@ -1,0 +1,706 @@
+{
+  "version": "3.0.0",
+  "visualisation": {
+    "nodes": [
+      {
+        "id": "n:0",
+        "position": {
+          "x": -52.82916916676973,
+          "y": 224.8386053742735
+        }
+      },
+      {
+        "id": "n:1",
+        "position": {
+          "x": -167.7604540178663,
+          "y": -158.7175724609033
+        }
+      },
+      {
+        "id": "n:2",
+        "position": {
+          "x": 221.218378313118,
+          "y": -66.21600771547546
+        }
+      }
+    ]
+  },
+  "dataModel": {
+    "version": "3.0",
+    "graphSchemaRepresentation": {
+      "version": "1.0.0",
+      "graphSchema": {
+        "nodeLabels": [
+          {
+            "$id": "nl:0",
+            "token": "actors.csv",
+            "properties": [
+              {
+                "$id": "p:0_0",
+                "token": "personId",
+                "type": {
+                  "type": "integer"
+                },
+                "nullable": false
+              },
+              {
+                "$id": "p:0_1",
+                "token": "movieId",
+                "type": {
+                  "type": "integer"
+                },
+                "nullable": false
+              },
+              {
+                "$id": "p:0_2",
+                "token": "characters",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": false
+              }
+            ]
+          },
+          {
+            "$id": "nl:1",
+            "token": "Movie",
+            "properties": [
+              {
+                "$id": "p:1_0",
+                "token": "movieId",
+                "type": {
+                  "type": "integer"
+                },
+                "nullable": false
+              },
+              {
+                "$id": "p:1_1",
+                "token": "title",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": false
+              },
+              {
+                "$id": "p:1_2",
+                "token": "avgVote",
+                "type": {
+                  "type": "float"
+                },
+                "nullable": false
+              },
+              {
+                "$id": "p:1_3",
+                "token": "releaseYear",
+                "type": {
+                  "type": "integer"
+                },
+                "nullable": false
+              },
+              {
+                "$id": "p:1_4",
+                "token": "tagline",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": false
+              },
+              {
+                "$id": "p:1_5",
+                "token": "genres",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": false
+              },
+              {
+                "$id": "p:1_6",
+                "token": "personType",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": false
+              },
+              {
+                "$id": "p:1_7",
+                "token": "personId",
+                "type": {
+                  "type": "integer"
+                },
+                "nullable": false
+              },
+              {
+                "$id": "p:1_8",
+                "token": "name",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": false
+              },
+              {
+                "$id": "p:1_9",
+                "token": "birthYear",
+                "type": {
+                  "type": "integer"
+                },
+                "nullable": false
+              },
+              {
+                "$id": "p:1_10",
+                "token": "deathYear",
+                "type": {
+                  "type": "boolean"
+                },
+                "nullable": false
+              },
+              {
+                "$id": "p:1_11",
+                "token": "characters",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": false
+              }
+            ]
+          },
+          {
+            "$id": "nl:2",
+            "token": "Person",
+            "properties": [
+              {
+                "$id": "p:2_0",
+                "token": "personId",
+                "type": {
+                  "type": "integer"
+                },
+                "nullable": false
+              },
+              {
+                "$id": "p:2_1",
+                "token": "name",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": false
+              },
+              {
+                "$id": "p:2_2",
+                "token": "birthYear",
+                "type": {
+                  "type": "integer"
+                },
+                "nullable": false
+              },
+              {
+                "$id": "p:2_3",
+                "token": "deathYear",
+                "type": {
+                  "type": "integer"
+                },
+                "nullable": false
+              }
+            ]
+          }
+        ],
+        "relationshipTypes": [
+          {
+            "$id": "rt:2",
+            "token": "DIRECTED",
+            "properties": [
+              {
+                "$id": "p:1",
+                "token": "personType",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true
+              }
+            ]
+          },
+          {
+            "$id": "rt:1",
+            "token": "ACTED_IN",
+            "properties": []
+          }
+        ],
+        "nodeObjectTypes": [
+          {
+            "$id": "n:0",
+            "labels": [
+              {
+                "$ref": "#nl:0"
+              }
+            ]
+          },
+          {
+            "$id": "n:1",
+            "labels": [
+              {
+                "$ref": "#nl:1"
+              }
+            ]
+          },
+          {
+            "$id": "n:2",
+            "labels": [
+              {
+                "$ref": "#nl:2"
+              }
+            ]
+          }
+        ],
+        "relationshipObjectTypes": [
+          {
+            "$id": "r:2",
+            "type": {
+              "$ref": "#rt:2"
+            },
+            "from": {
+              "$ref": "#n:2"
+            },
+            "to": {
+              "$ref": "#n:1"
+            }
+          },
+          {
+            "$id": "r:1",
+            "type": {
+              "$ref": "#rt:1"
+            },
+            "from": {
+              "$ref": "#n:2"
+            },
+            "to": {
+              "$ref": "#n:0"
+            }
+          }
+        ],
+        "constraints": [
+          {
+            "$id": "c:1",
+            "name": "movieId_Movie_key",
+            "constraintType": "key",
+            "entityType": "node",
+            "nodeLabel": {
+              "$ref": "#nl:1"
+            },
+            "properties": [
+              {
+                "$ref": "#p:1_0"
+              }
+            ]
+          },
+          {
+            "$id": "c:2",
+            "name": "personId_Person_key",
+            "constraintType": "key",
+            "entityType": "node",
+            "nodeLabel": {
+              "$ref": "#nl:2"
+            },
+            "properties": [
+              {
+                "$ref": "#p:2_0"
+              }
+            ]
+          },
+          {
+            "$id": "c:3",
+            "name": "personId_movieId_actors.csv_key",
+            "constraintType": "key",
+            "entityType": "node",
+            "nodeLabel": {
+              "$ref": "#nl:0"
+            },
+            "properties": [
+              {
+                "$ref": "#p:0_0"
+              },
+              {
+                "$ref": "#p:0_1"
+              }
+            ]
+          }
+        ],
+        "indexes": []
+      }
+    },
+    "graphSchemaExtensionsRepresentation": {
+      "nodeKeyProperties": [
+        {
+          "node": {
+            "$ref": "#n:2"
+          },
+          "keyProperties": [
+            {
+              "$ref": "#p:2_0"
+            }
+          ]
+        },
+        {
+          "node": {
+            "$ref": "#n:1"
+          },
+          "keyProperties": [
+            {
+              "$ref": "#p:1_0"
+            }
+          ]
+        },
+        {
+          "node": {
+            "$ref": "#n:0"
+          },
+          "keyProperties": [
+            {
+              "$ref": "#p:0_0"
+            },
+            {
+              "$ref": "#p:0_1"
+            }
+          ]
+        }
+      ],
+      "relationshipKeyProperties": []
+    },
+    "graphMappingRepresentation": {
+      "dataSourceSchema": {
+        "type": "local",
+        "tableSchemas": [
+          {
+            "name": "actors.csv",
+            "expanded": true,
+            "fields": [
+              {
+                "name": "personId",
+                "sample": "2295",
+                "recommendedType": {
+                  "type": "integer"
+                }
+              },
+              {
+                "name": "movieId",
+                "sample": "189",
+                "recommendedType": {
+                  "type": "integer"
+                }
+              },
+              {
+                "name": "characters",
+                "sample": "Marv",
+                "recommendedType": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          {
+            "name": "movies.csv",
+            "expanded": true,
+            "fields": [
+              {
+                "name": "movieId",
+                "sample": "189",
+                "recommendedType": {
+                  "type": "integer"
+                }
+              },
+              {
+                "name": "title",
+                "sample": "Sin City: A Dame to Kill For",
+                "recommendedType": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "avgVote",
+                "sample": "6.900000",
+                "recommendedType": {
+                  "type": "float"
+                }
+              },
+              {
+                "name": "releaseYear",
+                "sample": "2014",
+                "recommendedType": {
+                  "type": "integer"
+                }
+              },
+              {
+                "name": "tagline",
+                "sample": "There is no justice without sin.",
+                "recommendedType": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "genres",
+                "sample": "Action:Crime:Drama:Thriller",
+                "recommendedType": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "personType",
+                "sample": "ACTOR",
+                "recommendedType": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "personId",
+                "sample": "2295",
+                "recommendedType": {
+                  "type": "integer"
+                }
+              },
+              {
+                "name": "name",
+                "sample": "Mickey Rourke",
+                "recommendedType": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "birthYear",
+                "sample": "1952",
+                "recommendedType": {
+                  "type": "integer"
+                }
+              },
+              {
+                "name": "deathYear",
+                "sample": "0",
+                "recommendedType": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "characters",
+                "sample": "Marv",
+                "recommendedType": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          {
+            "name": "people.csv",
+            "expanded": true,
+            "fields": [
+              {
+                "name": "personId",
+                "sample": "23945",
+                "recommendedType": {
+                  "type": "integer"
+                }
+              },
+              {
+                "name": "name",
+                "sample": "Gérard Pirès",
+                "recommendedType": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "birthYear",
+                "sample": "1942",
+                "recommendedType": {
+                  "type": "integer"
+                }
+              },
+              {
+                "name": "deathYear",
+                "sample": "",
+                "recommendedType": {
+                  "type": "integer"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "nodeMappings": [
+        {
+          "node": {
+            "$ref": "#n:0"
+          },
+          "tableName": "actors.csv",
+          "propertyMappings": [
+            {
+              "property": {
+                "$ref": "#p:0_0"
+              },
+              "fieldName": "personId"
+            },
+            {
+              "property": {
+                "$ref": "#p:0_1"
+              },
+              "fieldName": "movieId"
+            },
+            {
+              "property": {
+                "$ref": "#p:0_2"
+              },
+              "fieldName": "characters"
+            }
+          ]
+        },
+        {
+          "node": {
+            "$ref": "#n:1"
+          },
+          "tableName": "movies.csv",
+          "propertyMappings": [
+            {
+              "property": {
+                "$ref": "#p:1_0"
+              },
+              "fieldName": "movieId"
+            },
+            {
+              "property": {
+                "$ref": "#p:1_1"
+              },
+              "fieldName": "title"
+            },
+            {
+              "property": {
+                "$ref": "#p:1_2"
+              },
+              "fieldName": "avgVote"
+            },
+            {
+              "property": {
+                "$ref": "#p:1_3"
+              },
+              "fieldName": "releaseYear"
+            },
+            {
+              "property": {
+                "$ref": "#p:1_4"
+              },
+              "fieldName": "tagline"
+            },
+            {
+              "property": {
+                "$ref": "#p:1_5"
+              },
+              "fieldName": "genres"
+            },
+            {
+              "property": {
+                "$ref": "#p:1_6"
+              },
+              "fieldName": "personType"
+            },
+            {
+              "property": {
+                "$ref": "#p:1_7"
+              },
+              "fieldName": "personId"
+            },
+            {
+              "property": {
+                "$ref": "#p:1_8"
+              },
+              "fieldName": "name"
+            },
+            {
+              "property": {
+                "$ref": "#p:1_9"
+              },
+              "fieldName": "birthYear"
+            },
+            {
+              "property": {
+                "$ref": "#p:1_10"
+              },
+              "fieldName": "deathYear"
+            },
+            {
+              "property": {
+                "$ref": "#p:1_11"
+              },
+              "fieldName": "characters"
+            }
+          ]
+        },
+        {
+          "node": {
+            "$ref": "#n:2"
+          },
+          "tableName": "people.csv",
+          "propertyMappings": [
+            {
+              "property": {
+                "$ref": "#p:2_0"
+              },
+              "fieldName": "personId"
+            },
+            {
+              "property": {
+                "$ref": "#p:2_1"
+              },
+              "fieldName": "name"
+            },
+            {
+              "property": {
+                "$ref": "#p:2_2"
+              },
+              "fieldName": "birthYear"
+            },
+            {
+              "property": {
+                "$ref": "#p:2_3"
+              },
+              "fieldName": "deathYear"
+            }
+          ]
+        }
+      ],
+      "relationshipMappings": [
+        {
+          "relationship": {
+            "$ref": "#r:2"
+          },
+          "tableName": "movies.csv",
+          "propertyMappings": [
+            {
+              "fieldName": "personType",
+              "property": {
+                "$ref": "#p:1"
+              }
+            }
+          ],
+          "fromMappings": {
+            "#p:2_0": "personType"
+          },
+          "toMappings": {
+            "#p:1_0": "movieId"
+          }
+        },
+        {
+          "relationship": {
+            "$ref": "#r:1"
+          },
+          "tableName": "people.csv",
+          "propertyMappings": [],
+          "fromMappings": {
+            "#p:2_0": "personId"
+          },
+          "toMappings": {
+            "#p:0_0": "personId",
+            "#p:0_1": "name"
+          }
+        }
+      ]
+    },
+    "configurations": {
+      "idsToIgnore": [],
+      "arrayDelimiter": "|",
+      "vectorDelimiter": "|"
+    }
+  }
+}
